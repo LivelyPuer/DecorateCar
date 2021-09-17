@@ -13,13 +13,13 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) throws IllegalAccessException, IOException {
-        JSONAuto json = new JSONAuto();
-        XMLAuto xml = new XMLAuto();
-        CSVAuto csv = new CSVAuto();
+        JSONAuto json = new JSONAuto(); // init json
+        XMLAuto xml = new XMLAuto(); // init xml
+        CSVAuto csv = new CSVAuto(); // init csv
         Auto auto = new Auto();
-        System.out.println(json.transform(auto));
-        System.out.println(xml.transform(auto));
-        System.out.println(csv.transform(auto));
+        System.out.println(json.transform(auto)); // Class Auto в json
+        System.out.println(xml.transform(auto)); // Class Auto в xml
+        System.out.println(csv.transform(auto)); // Class Auto в csv
     }
 }
 
@@ -49,7 +49,7 @@ class Auto {
     }
 
 }
-
+// Class Auto в json
 class JSONAuto {
     public String transform(Auto auto) throws IllegalAccessException, IOException {
         HashMap<String, Object> json = new HashMap<>();
@@ -70,6 +70,7 @@ class JSONAuto {
         return s;
     }
 }
+// Class Auto в csv
 class CSVAuto {
     public String transform(Auto auto) throws IllegalAccessException, IOException {
         HashMap<String, Object> json = new HashMap<>();
@@ -96,7 +97,7 @@ class CSVAuto {
         return s.toString();
     }
 }
-
+// Class Auto в xml
 class XMLAuto {
     public String transform(Auto auto) throws IllegalAccessException, IOException {
         HashMap<String, Object> json = new HashMap<>();
